@@ -63,6 +63,8 @@ namespace gsb_frais_correction.Forms
             menuFichier.DropDownItems.Add(new ToolStripMenuItem("Déconnexion", null, MenuDeconnexion_Click));
             menuFichier.DropDownItems.Add(new ToolStripSeparator());
             menuFichier.DropDownItems.Add(new ToolStripMenuItem("Quitter", null, (s, e) => Application.Exit()));
+            // Ajout de l'acces a l'ecran utilisateurs
+            menuFichier.DropDownItems.Add(new ToolStripMenuItem("Utilisateurs", null, MenuUtilisateurs_Click));
 
             menuPrincipal.Items.Add(menuFichier);
 
@@ -249,12 +251,8 @@ namespace gsb_frais_correction.Forms
 
         private void MenuUtilisateurs_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Fonctionnalité en cours de développement.\n\nCette fenêtre permettra de :\n" +
-                "- Créer de nouveaux utilisateurs\n" +
-                "- Modifier les informations utilisateur\n" +
-                "- Désactiver des comptes\n" +
-                "- Gérer les rôles",
-                "Gestion des utilisateurs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var form = new UtilisateursForm();
+            form.ShowDialog(this);
         }
 
         private void MenuTypesFrais_Click(object sender, EventArgs e)
