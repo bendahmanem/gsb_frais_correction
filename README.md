@@ -296,10 +296,10 @@ Ce projet est développé dans le cadre du **BTS SIO SLAM** à des fins pédagog
 
 ## 👨‍💻 Auteur
 
-**Développé par : **Bendahmane Mounir**
-**Formation :** BTS SIO SLAM  
-**Année :** 2025  
-**Établissement : **Pour l'ecole ISITECH**
+Développé par : **Bendahmane Mounir** <br>
+Formation : BTS SIO SLAM  
+Année : 2025  
+Établissement : **Pour l'ecole ISITECH**
 
 ---
 
