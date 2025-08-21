@@ -21,10 +21,10 @@ namespace gsb_frais_correction.Models
 
         // Calculated properties
         public string NomComplet => $"{Prenom} {Nom}";
-        public bool EstAdministrateur => Role == "Administrateur";
-        public bool EstVisiteur => Role == "Visiteur";
+        public bool EstAdministrateur => Role == "ADMINISTRATEUR";
+        public bool EstVisiteur => Role == "VISITEUR";
 
-        public bool EstComptable => Role == "Comptable";
+        public bool EstComptable => Role == "COMPTABLE";
 
         // Constructor
         public Utilisateur()

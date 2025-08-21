@@ -1,5 +1,6 @@
 ﻿using gsb_frais_correction.Models;
 using MySql.Data.MySqlClient;
+using System.Linq.Expressions;
 
 namespace gsb_frais_correction.DAL
 {
@@ -213,7 +214,40 @@ namespace gsb_frais_correction.DAL
 
         internal FicheFrais GetFiche(int ficheId)
         {
-            throw new NotImplementedException();
+            const string query = @"
+                SELECT * FROM v_fiches_avec_totaux
+                WHERE id = @ficheId";
+
+            try
+            {
+                using (var connection = _dbManager.GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ficheId", ficheId);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                return MapperFicheFrais(reader);
+                            }
+                            else
+                            {
+                                throw new Exception("Fiche non trouvée.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erreur lors de la récupération de la fiche : {ex.Message}");
+            }
+
+            return null;
+
         }
     }
 }

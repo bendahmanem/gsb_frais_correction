@@ -8,6 +8,7 @@ namespace gsb_frais_correction.Forms
         private readonly UtilisateurManager _utilisateurManager;
         private Panel pnlContent;
         private MenuStrip menuPrincipal;
+        private Button btnAjouter, btnModifier, btnSupprimer, btnFermer;
 
         public MainForm()
         {
@@ -266,11 +267,8 @@ namespace gsb_frais_correction.Forms
 
         private void MenuSaisieFrais_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Fonctionnalité en cours de développement.\n\nCette fenêtre permettra de :\n" +
-                "- Saisir les frais forfaitaires\n" +
-                "- Ajouter des frais hors forfait\n" +
-                "- Joindre des justificatifs",
-                "Saisie des frais", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               var form = new SaisieFraisForm();
+                form.ShowDialog(this);
         }
 
         private void MenuConsulterFiches_Click(object sender, EventArgs e)

@@ -11,7 +11,7 @@ namespace gsb_frais_correction.DAL
         private DatabaseManager()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["GSBDatabase"]?.ConnectionString
-                ?? "Server=localhost;Database=gsb_frais;Uid=root;Pwd=;";
+                ?? "Server=localhost;Database=gsb_frais;Uid=root;Pwd=notSecureChangeMe;";
         }
 
         public static DatabaseManager Instance
